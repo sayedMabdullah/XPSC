@@ -99,10 +99,10 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    ll t;
-    in >> t;
+    ll T;
+    in >> T;
 
-    for (int i = 0; i < t; i++)
+    for (int i = 0; i < T; i++)
     {
         solve();
     }
