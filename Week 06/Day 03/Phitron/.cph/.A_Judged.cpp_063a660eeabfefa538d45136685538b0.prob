@@ -1,0 +1,1 @@
+{"name":"Local: A_Judged","url":"e:\\Phitron CSE\\Semester 03\\XPSC\\Week 06\\Day 03\\Phitorn\\A_Judged.cpp","tests":[{"id":1714408728997,"input":"3\n1 0 0 0 1\n1 1 0 0 1\n0 1 1 1 1","output":"NO\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Phitron CSE\\Semester 03\\XPSC\\Week 06\\Day 03\\Phitorn\\A_Judged.cpp","group":"local","local":true}
