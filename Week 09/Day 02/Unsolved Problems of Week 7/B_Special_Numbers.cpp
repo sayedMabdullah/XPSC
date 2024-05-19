@@ -1,10 +1,10 @@
 /**
  * ---I'm starting in the name of Almighty ALLAH---
  *
- * Date: "18-05-2024"
- * Time: "12:39:01"
+ * Date: "19-05-2024"
+ * Time: "23:22:16"
  *
- * File: "B_Deja_Vu.cpp"
+ * File: "B_Special_Numbers.cpp"
  *
  **/
 
@@ -19,50 +19,44 @@
 #define Yes cout << "Yes" << nl
 #define no cout << "NO" << nl
 #define No cout << "No" << nl
+
 using namespace std;
 
+int power(int base, int n)
+{
+    int result = 1;
+    while (n)
+    {
+        if (n % 2 == 1)
+        {
+            result = (result * base) % 1000000007;
+            n--;
+        }
+        else
+        {
+            base = (base * base) % 1000000007;
+            n /= 2;
+        }
+    }
+    return result % 1000000007;
+}
 void solve()
 {
-    int n, q;
-    cin >> n >> q;
+    int n, k;
+    cin >> n >> k;
 
-    vector<int> a(n), ans;
-
-    for (int i = 0; i < n; i++)
+    vector<int> v;
+    int ans = 0;
+    for (int i = 0; i < 32; i++)
     {
-        cin >> a[i];
-    }
-    map<int, int> mp;
-    for (int i = 0; i < q; i++)
-    {
-        int x;
-        cin >> x;
-
-        if (!mp.count(x))
+        if ((k >> i) & 1)
         {
-            ans.push_back(x);
-            mp[x]++;
+            ans += power(n, i) % 1000000007;
+            ans = ans % 1000000007;
         }
     }
 
-    for (auto xx : ans)
-    {
-        for (int i = 0; i < n; i++)
-        {
-            int modv = pow(2, xx);
-
-            if (a[i] % modv == 0)
-            {
-                a[i] += pow(2, (xx - 1));
-            }
-        }
-    }
-
-    for (int aa : a)
-    {
-        cout << aa << " ";
-    }
-    cout << nl;
+    cout << ans << nl;
 }
 
 signed main()
